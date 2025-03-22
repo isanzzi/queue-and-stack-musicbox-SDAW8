@@ -44,7 +44,7 @@ int main(){
                 PushStacktoQueue(&Q, &S);
                 printf("Queue sesudah: ");
                 Tampil_List(Q.head);
-                printf("Stack sesudah: ");
+                printf("Playlist sesudah: ");
                 Tampil_List(S.top);
                 printf("tekan enter untuk kembali ");
                 getchar();
@@ -83,7 +83,7 @@ int main(){
                 break;
 
             case '6':
-                printf ("isi stack : ");
+                printf ("isi Playlist : ");
                 Tampil_List (S.top);
                 Push (&S, InsertTitle());
                 printf ("isi list sekarang : ");
@@ -93,7 +93,7 @@ int main(){
                 break;
             
             case '7': {
-                printf ("isi stack sekarang : ");
+                printf ("isi Playlist sekarang : ");
                 Tampil_List (S.top);
                 printf ("apakah anda yakin ingin menghapus : y/n \nMasukkan jawaban anda : ");
                 scanf (" %c", &pilih);
@@ -104,7 +104,7 @@ int main(){
                             Pop(&S, &nilai);
                             printf("Lagu yang di-undo: %s\n", nilai);
                         } else {
-                            printf("Stack kosong\n");
+                            printf("Playlist kosong\n");
                         }
                         break;
                     case 'n':
@@ -160,6 +160,6 @@ void PushStacktoQueue(Queue *Q, Stack *S) {
             free(temp);        // Free the node
         }
     } else {
-        printf("Stack kosong, tidak ada yang bisa dipindahkan\n");
+        printf("Playlist kosong, tidak ada yang bisa dipindahkan\n");
     }
 }
