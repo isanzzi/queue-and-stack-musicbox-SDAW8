@@ -7,16 +7,17 @@ void enqueue(Queue *Q, infotype nilai) {
     
     address P = SetNode(&newStr);
     if (P == nil) {
-        free(newStr);  // Free string if node creation fails
+        free(newStr);
         return;
     }
     
     if (isEmpty(Q->head)) {
         Q->head = P;
+        Q->tail = P;
     } else {
-        next(Q->tail) = P;
+        Ins_Akhir(&(Q->head), P);
+        Q->tail = P;
     }
-    Q->tail = P;
 }
 
 void SongNow (Queue *Q){
