@@ -143,11 +143,13 @@ int main(){
 void PushStacktoQueue(Queue *Q, Stack *S) {
     if (!isEmpty(S->top)) {
         address current = S->top;
+        // simpan tail awal jika queue tidak kosong
+        address lastTail = Q->tail;
         
         // Transfer each node from stack to queue
         while (current != nil) {
             char* temp = current->info;  // Store original string pointer
-            enqueue(Q, temp);  // Enqueue will make its own copy
+            enqueue(Q, temp);  // tail sudah diupdate di dalam enqueue
             current = current->next;
         }
         
